@@ -36,7 +36,7 @@ public class state
     {
         if((o.isTerminal())||(depth==maxDepth))
         {
-            Move lastMove=new Move(o.getLastMove().getX(),o.getLastMove().getY(),o.evaluate());
+            Move lastMove=new Move((int)o.getLastMove().getX(),(int)o.getLastMove().getY(),o.evaluate());
             runtime.gc();
             return lastMove;
         }
@@ -48,8 +48,8 @@ public class state
             if(move.getValue()>=maxMove.getValue())
             {
                 if(move.getValue()>=b){return move;}
-                maxMove.setX(child.getLastMove().getX());
-                maxMove.setY(child.getLastMove().getY());
+                maxMove.setX((int)child.getLastMove().getX());
+                maxMove.setY((int)child.getLastMove().getY());
                 maxMove.setValue(move.getValue());
                 child=null;
                 runtime.gc();
@@ -65,7 +65,7 @@ public class state
     {
         if((o.isTerminal())||(depth==maxDepth))
         {
-            Move lastMove=new Move(o.getLastMove().getX(),o.getLastMove().getY(),o.evaluate());
+            Move lastMove=new Move((int)o.getLastMove().getX(),(int)o.getLastMove().getY(),o.evaluate());
             runtime.gc();
             return lastMove;
         }
@@ -77,8 +77,8 @@ public class state
             if(move.getValue()<=minMove.getValue())
             {
                 if(move.getValue()<=a) {return move;}
-                minMove.setX(child.getLastMove().getX());
-                minMove.setY(child.getLastMove().getY());
+                minMove.setX((int)child.getLastMove().getX());
+                minMove.setY((int)child.getLastMove().getY());
                 minMove.setValue(move.getValue());
                 child=null;
                 runtime.gc();

@@ -13,7 +13,7 @@ public class Othello {
     private int evaluation;
     private Move lastMove;
     private char previous = 'W';
-    private char now = 'B';
+    char now = 'B';
     public Runtime runtime;
     public int depth;
 
@@ -34,7 +34,74 @@ public class Othello {
         runtime.gc();
 
             }
-        }
-    }
+
+	public Othello(Othello o) {
+		// TODO Auto-generated constructor stub
+	}
+
+	private void setRules(char c) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setBlackcircles() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setWhitecircles() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getBlackcircles() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getWhitecircles() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public char getPlayer() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public Square getSquare(int gety, int getx) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void makeMove(int gety, int getx, char player2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setPlayer() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean isTerminal() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Point getLastMove() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int evaluate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public ArrayList<Othello> getChildren(char c) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
