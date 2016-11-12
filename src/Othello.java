@@ -42,7 +42,12 @@ public class Othello {
             runtime = o.runtime;
         }
         lastMove = o.lastMove;
-        setRules('B');
+        blackCircles = o.getBlackcircles();
+        whiteCircles = o.getWhitecircles();
+        evaluation = o.evaluation;
+        player = o.getPlayer();
+        previous = o.previous;
+        setRules(o.now);
         this.depth = o.depth;
         runtime.gc();
 	}
@@ -64,12 +69,12 @@ public class Othello {
 
 	public int getBlackcircles() {
 		// TODO Auto-generated method stub
-		return 0;
+		return blackCircles;
 	}
 
 	public int getWhitecircles() {
 		// TODO Auto-generated method stub
-		return 0;
+		return whiteCircles;
 	}
 
 	public char getPlayer() {
@@ -78,8 +83,7 @@ public class Othello {
 	}
 
 	public Square getSquare(int gety, int getx) {
-		// TODO Auto-generated method stub
-		return null;
+		return othelloBoard[gety][getx];
 	}
 
 	public void makeMove(int gety, int getx, char player2) {
