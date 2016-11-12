@@ -32,11 +32,19 @@ public class Othello {
         setRules('B');
         this.depth = depth;
         runtime.gc();
-
-            }
+    }
 
 	public Othello(Othello o) {
-		// TODO Auto-generated constructor stub
+        for(int j = 0; j < 8; j++) {
+            for (int i = 0; i < 8; i++) {
+                othelloBoard[j][i] = o.othelloBoard[j][i];
+            }
+            runtime = o.runtime;
+        }
+        lastMove = o.lastMove;
+        setRules('B');
+        this.depth = o.depth;
+        runtime.gc();
 	}
 
 	private void setRules(char c) {
