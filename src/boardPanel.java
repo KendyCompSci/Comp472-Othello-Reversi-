@@ -90,8 +90,8 @@ public class boardPanel extends JPanel implements MouseListener {
             y=y+40;
         }
         g2d.setColor(Color.RED);
-        game.setBlackcircles();
-        game.setWhitecircles();
+        game.setBlackCircles();
+        game.setWhiteCircles();
         int black=game.getBlackCircles();
         int white=game.getWhiteCircles();
         g2d.drawString("Black circles: "+black,70f,15f);
