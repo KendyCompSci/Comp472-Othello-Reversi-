@@ -17,7 +17,7 @@ public class Square {
 
     //Contrstuctor of the square
     public Square(int x, int y, int w, int h, int i, int j) {
-this.x = x;
+        this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
@@ -63,6 +63,8 @@ this.x = x;
     public char getCircle() {
         return circle;
     }
+
+    public void setCircle(char aCircle) { this.circle = aCircle;}
 
     public int getX() {
         return x;

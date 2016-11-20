@@ -9,6 +9,8 @@ import java.awt.Graphics2D; //
 import java.awt.geom.Rectangle2D;
 import java.awt.Color;
 import javax.swing.*;
+import javax.swing.event.*;
+import java.util.*;
 import java.lang.*;
 
 public class boardPanel extends JPanel implements MouseListener {
@@ -29,7 +31,6 @@ public class boardPanel extends JPanel implements MouseListener {
 
         runtime = Runtime.getRuntime();
         runtime.gc();
-        ////////////////////////////////////////////
 
     }
 
@@ -91,8 +92,8 @@ public class boardPanel extends JPanel implements MouseListener {
         g2d.setColor(Color.RED);
         game.setBlackcircles();
         game.setWhitecircles();
-        int black=game.getBlackcircles();
-        int white=game.getWhitecircles();
+        int black=game.getBlackCircles();
+        int white=game.getWhiteCircles();
         g2d.drawString("Black circles: "+black,70f,15f);
         g2d.drawString("White circles: "+white,300f,15f);
         String player;
@@ -113,19 +114,20 @@ public class boardPanel extends JPanel implements MouseListener {
             int gety, getx;
             getx = event.getX() / 40;
             gety = event.getY() / 40;
-            if(!this.game.getSquare(gety,getx).getAdd_circle()) JOptionPane.showMessageDialog(this,"You can not place a circle here");
+            if(!this.game.getSquare(gety,getx).getAdd_circle())
+                JOptionPane.showMessageDialog(this,"You can not place a circle here");
             if ((getx >= 0) && (gety >= 0) && (getx <= 7) && (gety <= 7) && (this.game.getSquare(gety, getx).getAdd_circle())) {
                 this.game.makeMove(gety, getx, this.game.getPlayer());
-//for(int i=0;i<this.game.getSquare(gety,getx).getChangesSize();i++)System.out.println("allages B: " + (int) this.game.getSquare(gety, getx).getChange(i).getX() + " ," + (int) this.game.getSquare(gety, getx).getChange(i).getY());
                 this.game.setPlayer();
                 this.repaint();
             }
 
         }
         this.repaint();
-//this.game.setPlayer();
+        //this.game.setPlayer();
         runtime.gc();
     }
+
 
     public void mousePressed(MouseEvent event) {
     }

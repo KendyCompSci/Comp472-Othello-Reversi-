@@ -13,7 +13,7 @@ public class Driver extends JFrame implements ActionListener {
 
     boardPanel boardGame;
     JLabel label;
-    String about = "Othello - Reversi      Comp 472 Kendy Jeune";
+    String about = "Othello - Reversi   Comp 472    Kendy Jeune, Mathieu Beauchemin";
     int response = 0;
 
     public Driver() {
