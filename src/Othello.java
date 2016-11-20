@@ -57,6 +57,7 @@ public class Othello {
         return othelloBoard[i][j];
     }
 
+
     //Give us the Black circle count
      public void setBlackCircles() {
         int counter = 0;
@@ -111,14 +112,14 @@ public class Othello {
     public void setRules(char player) { //Player or computer
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if (!(othelloBoard[i][j].getCircle() == 'N')) {
-                    othelloBoard[i][j].setAdd_circle(false); // If there is a cycle can not put another
+                if (!(othelloBoard[i][j].getCircle() == '0')) {
+                    othelloBoard[i][j].setAdd_circle(false); // If there is a circle, cannot put another
                 } else {
                     othelloBoard[i][j].setAdd_circle(lookVertically(new Point(i, j), player) | lookHorizontally(new Point(i, j), player) | lookDiagonally(new Point(i, j), player)); //binary or
                 }
             }
 
-        }
+    }
 
     }
 
@@ -875,5 +876,6 @@ public class Othello {
     public Move getLastMove(){
         return this.lastMove;
     }
+
 
 }

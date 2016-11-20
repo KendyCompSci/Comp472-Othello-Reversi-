@@ -1,6 +1,6 @@
 /**
  * Created by Kendy on 2016-10-29.
- * Create the squre object
+ * Create the square object
  */
 import java.util.*;
 import java.awt.*;
@@ -15,7 +15,7 @@ public class Square {
     private Vector<Point> changes;
     private char label;
 
-    //Contrstuctor of the square
+    //Constructor of the square
     public Square(int x, int y, int w, int h, int i, int j) {
         this.x = x;
         this.y = y;
@@ -33,7 +33,7 @@ public class Square {
         } //EMPTY
 
         changes = new Vector<Point>();
-        //Change  the Sqare to the proper Label in their proper board position
+        //Change  the Square to the proper Label in their proper board position
         if (((j == 0) && (i == 0)) || ((j == 7) && (i == 7)) || ((j == 0) && (i == 7)) || ((j == 7) && (i == 0))) {
             label = 'S';
         }
