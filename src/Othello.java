@@ -115,7 +115,7 @@ public class Othello {
                 if (!(othelloBoard[i][j].getCircle() == '0')) {
                     othelloBoard[i][j].setAdd_circle(false); // If there is a circle, cannot put another
                 } else {
-                    othelloBoard[i][j].setAdd_circle(lookVertically(new Point(i, j), player) | lookHorizontally(new Point(i, j), player) | lookDiagonally(new Point(i, j), player)); //binary or
+                    othelloBoard[i][j].setAdd_circle(lookVertically(new Point(i, j), player) || lookHorizontally(new Point(i, j), player) || lookDiagonally(new Point(i, j), player)); //binary or
                 }
             }
 
@@ -124,7 +124,7 @@ public class Othello {
     }
 
     private boolean lookHorizontally(Point square1, char player) {
-        return (lookRight(square1, player) | lookLeft(square1, player));
+        return (lookRight(square1, player) || lookLeft(square1, player));
     }
 
     private boolean lookRight(Point square1, char player){
@@ -260,7 +260,7 @@ public class Othello {
     }
 
     private boolean lookVertically(Point square1, char player) {
-        return (lookDown(square1, player)) | (lookUp(square1, player));
+        return (lookDown(square1, player)) || (lookUp(square1, player));
     }
 
     private boolean lookDown(Point square1, char player) {
@@ -398,7 +398,7 @@ public class Othello {
     }
 
     public boolean lookDiagonally(Point square1, char player) {
-        return (lookDiagonalUpLeft(square1, player) | lookDiagonalDownLeft(square1, player)| lookDiagonalUpRight(square1, player) | lookDiagonalDownRight(square1, player));
+        return (lookDiagonalUpLeft(square1, player) || lookDiagonalDownLeft(square1, player)|| lookDiagonalUpRight(square1, player) || lookDiagonalDownRight(square1, player));
     }
 
     private boolean lookDiagonalDownLeft(Point square1, char player) {
