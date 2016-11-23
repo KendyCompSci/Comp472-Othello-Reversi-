@@ -55,7 +55,6 @@ public class Driver extends JFrame implements ActionListener {
             options[2] = "Difficult";
             response=JOptionPane.showOptionDialog(null,"New game","Choose Difficulty:",0,JOptionPane.QUESTION_MESSAGE, null, options,options[1]);
             boardGame = new boardPanel(70, 70, 40, 40, response);
-
             add(boardGame);
         }
 
@@ -65,8 +64,6 @@ public class Driver extends JFrame implements ActionListener {
 
         if (e.getActionCommand().equals("About")) {
             JOptionPane.showMessageDialog(this, about);
-
-
             setLayout(new FlowLayout());
         }
     }

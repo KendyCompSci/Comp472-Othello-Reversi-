@@ -57,7 +57,6 @@ public class state
             a=Math.max(a,move.getValue());
         }
         return maxMove;
-
     }
 
     //will return the MIN value for the minmax agent
@@ -86,8 +85,5 @@ public class state
             b=Math.min(b,move.getValue());
         }
         return minMove;
-
     }
-
-
     }

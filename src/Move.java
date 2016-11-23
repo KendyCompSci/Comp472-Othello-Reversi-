@@ -1,7 +1,7 @@
 /**
  * Created by Kendy on 2016-10-29.
  *
- * This class describie a move in the board.
+ * This class describe a move in the board.
  * we need to keep the moves as well as the states.
  */
 public class Move {

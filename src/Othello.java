@@ -704,7 +704,6 @@ public class Othello {
             for (int i = 0; i < othelloBoard[x][y].getChangesSize(); i++) {
                 this.othelloBoard[(int) othelloBoard[x][y].getChange(i).getX()][(int) othelloBoard[x][y].getChange(i).getY()].setCircle('W');
             }
-
             setRules('B');
         }
 
@@ -742,9 +741,7 @@ public class Othello {
             runtime.gc();
             setRules('B');
             setPlayer();
-
         }
-
     }
 
     private int getMovesNumber() {
@@ -757,7 +754,6 @@ public class Othello {
             }
         }
         return counter;
-
     }
 
     public boolean isTerminal() {
@@ -774,7 +770,6 @@ public class Othello {
         } else {
             return false;
         }
-
     }
 
     public int evaluate() {
@@ -841,15 +836,10 @@ public class Othello {
                     }
                     f = false;
                 }
-
                 f = true;
-
-
             }
         }
-
         return (10 * eval1 / 100 + 40 * eval2 / 100 + 50 * eval3 / 100);
-
     }
 
     public void setEvaluation(int e){
