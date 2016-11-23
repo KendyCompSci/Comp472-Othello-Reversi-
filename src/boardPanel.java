@@ -15,7 +15,7 @@ import java.lang.*;
 
 public class boardPanel extends JPanel implements MouseListener {
 
-    private Graphics2D g2d;
+
     private Othello game;
     public int depth;
     Runtime runtime;
@@ -43,6 +43,7 @@ public class boardPanel extends JPanel implements MouseListener {
     }
 
     public void paintComponent(Graphics g) {
+        Graphics2D g2d;
         super.paintComponent(g);
         g2d = (Graphics2D) g;
         this.setBackground(new Color(0,123,0));

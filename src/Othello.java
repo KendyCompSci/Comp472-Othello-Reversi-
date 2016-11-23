@@ -91,12 +91,12 @@ public class Othello {
 
     public ArrayList<Othello> getChildren(char player) {
         ArrayList<Othello> children = new ArrayList<Othello>();
-        for (int y = 0; y < 8; y++) {
-            for (int x = 0; x < 8; x++) {
-                if (this.othelloBoard[y][x].getAdd_circle()) {
+        for (int x = 0; x < 8; x++) {
+            for (int y = 0; y < 8; y++) {
+                if (this.othelloBoard[x][y].getAdd_circle()) {
                     Othello child = new Othello(this); //This Othello instance
-                    child.makeMove(y, x, player);
-                    child.lastMove = new Move(y, x);
+                    child.makeMove(x, y, player);
+                    child.lastMove = new Move(x, y);
                     if (player == 'B') {
                         child.setRules('W');
                     } else {
@@ -765,11 +765,8 @@ public class Othello {
                 }
             }
         }
-        if (counter == 64) {//Number of Maximum tiles
-            return true;
-        } else {
-            return false;
-        }
+        //Number of Maximum tiles
+        return counter == 64;
     }
 
     public int evaluate() {
