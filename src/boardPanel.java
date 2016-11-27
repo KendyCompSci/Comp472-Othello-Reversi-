@@ -121,7 +121,7 @@ public class boardPanel extends JPanel implements MouseListener {
             if ((getx >= 0) && (gety >= 0) && (getx <= 7) && (gety <= 7) && (this.game.getSquare(gety, getx).getAdd_circle())) {
                 this.game.makeMove(gety, getx, this.game.getPlayer());
                 this.game.setPlayer();
-                this.repaint();
+                //this.repaint();
             }
 
         }

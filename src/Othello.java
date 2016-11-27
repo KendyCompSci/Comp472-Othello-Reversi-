@@ -788,70 +788,54 @@ public class Othello {
         this.setBlackCircles();
         this.setWhiteCircles();
 
-        int eval1 = this.getBlackCircles() - this.getWhiteCircles();
-
-        int eval2 = 0;
-        int eval3 = 0;
-        int sth = 0;
-        boolean f = true;
+        int coinParity = this.getBlackCircles() - this.getWhiteCircles();
+        int cornerControl = 0;
+        int movesAvailable = getMovesNumber();
+        boolean blackTurn = (getPlayer() == 'B');
+        if(blackTurn)
+        {
+            movesAvailable = 0 - movesAvailable;
+        }
         for (int j = 0; j < 8; j++) {
             for (int i = 0; i < 8; i++) {
-                if (this.getSquare(j, i).getCircle() == 'S') {
-                    if (getPlayer() == 'B') {
-                        eval2 = -10;
-                    } else {
-                        eval2 = 10;
+                if (this.getSquare(j, i).getLabel() == 'S') {
+                    if (this.getSquare(j, i).getCircle() == 'B') {
+                         cornerControl += -10;
+                    } else if (this.getSquare(j, i).getCircle() == 'W'){
+                         cornerControl += 10;
                     }
                 } else if (this.getSquare(j, i).getLabel() == 'X') {
-                    if (getPlayer() == 'B') {
-                        eval2 = 10;
-                    } else {
-                        eval2 = -10;
+                    if (this.getSquare(j, i).getCircle() == 'B') {
+                         cornerControl += 7;
+                    } else if (this.getSquare(j, i).getCircle() == 'W') {
+                         cornerControl += -7;
                     }
                 } else if (this.getSquare(j, i).getLabel() == 'C') {
-                    if (getPlayer() == 'B') {
-                        eval2 = 7;
-                    } else {
-                        eval2 = -7;
+                    if (this.getSquare(j, i).getCircle() == 'B') {
+                         cornerControl += 5;
+                    } else if (this.getSquare(j, i).getCircle() == 'W') {
+                         cornerControl += -5;
                     }
                 } else if (this.getSquare(j, i).getLabel() == 'B') {
-                    if (getPlayer() == 'B') {
-                        eval2 = -5;
-                    } else {
-                        eval2 = 5;
+                    if (this.getSquare(j, i).getCircle() == 'B') {
+                         cornerControl += -2;
+                    } else if (this.getSquare(j, i).getCircle() == 'W') {
+                         cornerControl += 2;
                     }
                 } else if (this.getSquare(j, i).getLabel() == 'A') {
-                    if (getPlayer() == 'B') {
-                        eval2 = 7;
-                    } else {
-                        eval2 = -7;
+                    if (this.getSquare(j, i).getCircle() == 'B') {
+                        cornerControl += 4;
+                    } else if (this.getSquare(j, i).getCircle() == 'W') {
+                        cornerControl += -4;
                     }
                 }
-                if ((i > 0)) {
-                    if (this.getSquare(j, i - 1).getCircle() == 'B') {
-                        eval3 = -10;
-                    }
-                } else if ((i < 7)) {
-                    if (this.getSquare(j, i + 1).getCircle() == 'B') {
-                        eval3 = -10;
-                    }
-                }
-                if (f) {
-                    if ((j > 0)) {
-                        if (this.getSquare(j - 1, sth).getCircle() == 'B') {
-                            eval3 = -10;
-                        }
-                    } else if ((j < 7)) {
-                        if (this.getSquare(j + 1, sth).getCircle() == 'B') {
-                            eval3 = -10;
-                        }
-                    }
-                    f = false;
-                }
-                f = true;
             }
         }
-        return (10 * eval1 / 100 + 40 * eval2 / 100 + 50 * eval3 / 100);
+        int heuristic = (3 * coinParity); //difference in coins is minimally important for good decisions
+        heuristic += (5 * cornerControl); //controlling corners is moderately important
+        heuristic += (20* movesAvailable); //restricting opponent mobility is vitally important
+        heuristic = (heuristic / 100); //keep values small
+        return heuristic;
     }
 
     public void setEvaluation(int e){
