@@ -1,6 +1,6 @@
 /**
- * Created by Kendy on 2016-10-29.
- * Create the square object
+ * Created by Kendy and Mathieu from (2016-10-29)-(2016-11-28)
+ * Create the square object (holds circles)
  */
 import java.util.*;
 import java.awt.*;

@@ -1,5 +1,6 @@
 /**
- * Created by Kendy on 2016-10-29.
+ * Created by Kendy and Mathieu from (2016-10-29)-(2016-11-28)
+ * Panel to catch player actions
  */
 import java.awt.*;
 import java.awt.event.*;

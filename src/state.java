@@ -1,5 +1,5 @@
 /**
- * Created by Kendy on 2016-10-29.
+ * Created by Kendy and Mathieu from (2016-10-29)-(2016-11-28)
  * AI class that provide min max, alpha beta agent
  */
 

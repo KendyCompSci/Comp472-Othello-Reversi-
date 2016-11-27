@@ -1,5 +1,5 @@
 /**
- * Created by Kendy on 2016-10-30.
+ * Created by Kendy and Mathieu from (2016-10-29)-(2016-11-28)
  * Driver class to run the program
  */
 

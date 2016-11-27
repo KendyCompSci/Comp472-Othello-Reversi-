@@ -1,8 +1,8 @@
 /**
- * Created by Kendy on 2016-10-29.
+ * Created by Kendy and Mathieu from (2016-10-29)-(2016-11-28)
  *
  * This class describe a move in the board.
- * we need to keep the moves as well as the states.
+ * We need to keep the moves as well as the states.
  */
 public class Move {
 

@@ -1,5 +1,6 @@
 /**
- * Created by Kendy on 2016-10-29.
+ * Created by Kendy and Mathieu from (2016-10-29)-(2016-11-28).
+ * Main game logic, contains the board of squares and sets rules
  */
 
 import java.awt.*;
@@ -757,16 +758,30 @@ public class Othello {
     }
 
     public boolean isTerminal() {
-        int counter = 0;
+        int circleCounter = 0;
+        int bCounter = 0;
+        int wCounter = 0;
+        if(getMovesNumber() == 0)
+        {
+            return true;
+        }
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if((othelloBoard[i][j].getCircle() == 'B') || (this.othelloBoard[i][j].getCircle() == 'W')) {
-                    counter++;
+                if(this.othelloBoard[i][j].getCircle() == 'B') {
+                    bCounter++;
+                    circleCounter++;
+                }
+                if(this.othelloBoard[i][j].getCircle() == 'W') {
+                    wCounter++;
+                    circleCounter++;
                 }
             }
         }
         //Number of Maximum tiles
-        return counter == 64;
+        if(bCounter == 0 || wCounter == 0)
+            return true;
+        else
+            return circleCounter == 64;
     }
 
     public int evaluate() {
