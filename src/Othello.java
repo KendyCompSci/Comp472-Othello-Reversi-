@@ -796,7 +796,7 @@ public class Othello {
         boolean f = true;
         for (int j = 0; j < 8; j++) {
             for (int i = 0; i < 8; i++) {
-                if (this.getSquare(j, i).getCircle() == 'S') {
+                if (this.getSquare(j, i).getLabel() == 'S') {
                     if (getPlayer() == 'B') {
                         eval2 = -10;
                     } else {
