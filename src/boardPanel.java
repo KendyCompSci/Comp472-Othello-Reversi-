@@ -127,8 +127,8 @@ public class boardPanel extends JPanel implements MouseListener {
             if(!this.game.getSquare(gety,getx).getAdd_circle())
                 JOptionPane.showMessageDialog(this,"You can not place a circle here");
             if ((getx >= 0) && (gety >= 0) && (getx <= 7) && (gety <= 7) && (this.game.getSquare(gety, getx).getAdd_circle())) {
-                print();
                 this.game.makeMove(gety, getx, this.game.getPlayer());
+                print();
                 this.game.setPlayer();
                 this.repaint();
             }
