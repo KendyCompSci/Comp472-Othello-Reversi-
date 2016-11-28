@@ -29,7 +29,7 @@ public class boardPanel extends JPanel implements MouseListener {
         else if(response==1) depth=3;
         else depth=5;
         game = new Othello(x, y, w, h,depth);
-
+        print();
         runtime = Runtime.getRuntime();
         runtime.gc();
 
@@ -127,6 +127,7 @@ public class boardPanel extends JPanel implements MouseListener {
             if(!this.game.getSquare(gety,getx).getAdd_circle())
                 JOptionPane.showMessageDialog(this,"You can not place a circle here");
             if ((getx >= 0) && (gety >= 0) && (getx <= 7) && (gety <= 7) && (this.game.getSquare(gety, getx).getAdd_circle())) {
+                print();
                 this.game.makeMove(gety, getx, this.game.getPlayer());
                 this.game.setPlayer();
                 this.repaint();
@@ -136,6 +137,19 @@ public class boardPanel extends JPanel implements MouseListener {
         this.repaint();
         //this.game.setPlayer();
         runtime.gc();
+    }
+
+    private void print()
+    {
+        System.out.println("(");
+        for(int i = 0; i < 8; i++) {
+            System.out.print("(");
+            for(int j = 0; j < 8; j++) {
+                System.out.print(game.getSquare(i, j).getCircle());
+            }
+            System.out.print(")\n");
+        }
+        System.out.println(")");
     }
 
 
