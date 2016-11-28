@@ -34,7 +34,7 @@ public class state
     //will return the MAX value for the minmax agent
     private Move max_Value(Othello o,int a,int b,int depth)
     {
-        if((o.isTerminal())||(depth==maxDepth))
+        if((o.isTerminal())||(depth>=maxDepth))
         {
             Move lastMove=new Move(o.getLastMove().getX(),o.getLastMove().getY(),o.evaluate());
             runtime.gc();

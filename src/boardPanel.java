@@ -31,6 +31,7 @@ public class boardPanel extends JPanel implements MouseListener {
         game = new Othello(x, y, w, h,depth);
 
         runtime = Runtime.getRuntime();
+        print();
         runtime.gc();
 
     }
@@ -122,6 +123,7 @@ public class boardPanel extends JPanel implements MouseListener {
                 this.game.makeMove(gety, getx, this.game.getPlayer());
                 this.game.setPlayer();
                 this.repaint();
+                print();
             }
 
         }
@@ -130,6 +132,18 @@ public class boardPanel extends JPanel implements MouseListener {
         runtime.gc();
     }
 
+    private void print()
+    {
+        System.out.println("(");
+        for(int i = 0; i < 8; i++) {
+            System.out.print("(");
+            for(int j = 0; j < 8; j++) {
+                System.out.print(game.getSquare(i, j).getCircle());
+            }
+            System.out.print(")\n");
+        }
+        System.out.println(")");
+    }
 
     public void mousePressed(MouseEvent event) {
     }
