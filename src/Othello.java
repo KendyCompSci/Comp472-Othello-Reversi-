@@ -788,7 +788,7 @@ public class Othello {
         this.setBlackCircles();
         this.setWhiteCircles();
 
-        int coinParity = this.getBlackCircles() - this.getWhiteCircles();
+        int coinGap = this.getWhiteCircles() - this.getBlackCircles();
         int cornerControl = 0;
         int movesAvailable = getMovesNumber();
         boolean blackTurn = (getPlayer() == 'B');
@@ -831,7 +831,7 @@ public class Othello {
                 }
             }
         }
-        int heuristic = (3 * coinParity); //difference in coins is minimally important for good decisions
+        int heuristic = (3 *  coinGap); //difference in coins is minimally important for good decisions
         heuristic += (5 * cornerControl); //controlling corners is moderately important
         heuristic += (20* movesAvailable); //restricting opponent mobility is vitally important
         heuristic = (heuristic / 100); //keep values small

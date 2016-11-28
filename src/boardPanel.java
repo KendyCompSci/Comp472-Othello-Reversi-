@@ -63,6 +63,14 @@ public class boardPanel extends JPanel implements MouseListener {
                     g2d.setColor(Color.BLACK);
                     g2d.fillOval(game.getSquare(j, i).getX() + 5, game.getSquare(j, i).getY() + 5, 30, 30);
                 }
+                if (game.getSquare(j, i).getCircle() == 'A') {
+                    g2d.setColor(Color.BLUE);
+                    g2d.fillOval(game.getSquare(j, i).getX() + 5, game.getSquare(j, i).getY() + 5, 30, 30);
+                }
+                if (game.getSquare(j, i).getCircle() == '0') {
+                    g2d.setColor(new Color(0,123,0));
+                    g2d.fillOval(game.getSquare(j, i).getX() + 5, game.getSquare(j, i).getY() + 5, 30, 30);
+                }
                 g2d.setColor(Color.BLACK);
 
             }
@@ -121,7 +129,7 @@ public class boardPanel extends JPanel implements MouseListener {
             if ((getx >= 0) && (gety >= 0) && (getx <= 7) && (gety <= 7) && (this.game.getSquare(gety, getx).getAdd_circle())) {
                 this.game.makeMove(gety, getx, this.game.getPlayer());
                 this.game.setPlayer();
-                //this.repaint();
+                this.repaint();
             }
 
         }
